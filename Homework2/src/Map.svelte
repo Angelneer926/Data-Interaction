@@ -14,10 +14,6 @@
         .translate([width, height]);
     let path = d3.geoPath().projection(proj);
 
-    // $: scale = d3.scaleOrdinal(d3.schemeDark2)
-    //   .domain(d3.extent(data.map((d) => +d.properties.name10)));
-    // $: scale = d3.scaleSequential(d3.interpolateGreens)
-    //   .domain(d3.extent(data.map((d) => +d.properties.walkability)));
     $: scale = d3.scaleLinear()
     .domain([d3.min(data.map((d) => +d.properties['Incident Count'])), 
              d3.median(data.map((d) => +d.properties['Incident Count'])), 

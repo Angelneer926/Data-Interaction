@@ -27,10 +27,8 @@
       .then((d) => d.features);
     
     await Promise.all([table, geocoord]).then((values) => {
-      // console.log(values);
       let table = values[0];
       let geocoord = values[1];
-      // join the variables we want to show on the map
       for (let i = 0; i < geocoord.length; i++) {
         let tract = geocoord[i].properties.postalCode;
         let found = false;
@@ -49,7 +47,6 @@
           }
         }
       }
-      // console.log(data);
       fullData = [...data];
     });
 	});
